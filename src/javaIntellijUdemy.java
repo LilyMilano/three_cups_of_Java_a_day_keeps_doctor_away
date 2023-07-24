@@ -61,5 +61,47 @@ public class javaIntellijUdemy {
         System.out.println("Octal System: " + octalSystem); // Octal System: 702
         System.out.println("From octal to decimal: " + 0702);    // From octal to decimal: 450
 
+        // ....................................................................................
+        // Strings to primitives
+
+        String booleanValue = "true";
+        boolean stringToBoolean = Boolean.parseBoolean(booleanValue);
+            System.out.println(stringToBoolean);
+        String decimal = "2.56";
+        double stringToDouble = Double.parseDouble(decimal);
+            System.out.println(stringToDouble);
+
+        String integerValue = "395";
+        int stringToInteger = Integer.parseInt(integerValue);
+            System.out.println(stringToInteger);
+
+        String floating = "2.56e2f";
+        float stringToFloat = Float.parseFloat(floating);
+            System.out.println(stringToFloat);
+
+        // Primitives to string
+        boolean conditional = true;
+        String conditionalToString = Boolean.toString(conditional);
+
+        int horsesNumber = 5687;
+        String horsesToString = Integer.toString(horsesNumber);
+
+        float floatingPoint = 2.56e2f;
+        String floatingToString = Float.toString(floatingPoint);
+
+        double decimalNumber = 23.678;
+        String doubleToString = Double.toString(decimalNumber);
+
+        String message = conditionalToString + "\n" + horsesToString + "\n" + floatingToString + "\n" + doubleToString;
+        System.out.println(message);
+
+        // Primitive to primitive
+        int i = 400;
+        short s = (short)i;
+            System.out.println(s); // 400
+        long l = i;
+            System.out.println(l);  // 400
+        char c = (char)i;
+            System.out.println(c);  // Ɛ
     }
 }
