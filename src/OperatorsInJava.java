@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class OperatorsInJava {
     public static void main(String[] args) {
         // Unary Operators
@@ -42,11 +44,34 @@ public class OperatorsInJava {
         boolean r1 = n1 > n2 || n1 == n2;
         boolean r2 = n1 > n2 && n1 == n2;
         boolean r3 = n1 > n2 && lie == true;
-        boolean r4 = (n1 > n2 || n1 == n2)|| lie == true;
+        boolean r4 = (n1 > n2 || n1 == n2)||(lie == true);
+        boolean r5 = ((n1 > n2 && lie == false) || (n1 == n2 && n1 < n2) && lie == false);
         System.out.println(r1); // true
         System.out.println(r2); // false
         System.out.println(r3); // false
         System.out.println(r4); // true
+        System.out.println(r5); // true
+        //..............................................................................................................
+
+        // Example: Login
+
+        String username = "Lily";
+        String password = "12345";
+
+        Scanner entry = new Scanner(System.in);
+        System.out.println("Enter your username:");
+        String user = entry.nextLine();
+        System.out.println("Enter your password:");
+        String pass = entry.nextLine();
+
+        if (username.equals(user) && password.equals(pass)){
+            System.out.println("You are successfully logged in. Welcome.");
+        }
+        else {
+            System.out.println("Incorrect data. Please try again.");
+        }
+
+        //..............................................................................................................
 
     }
 
