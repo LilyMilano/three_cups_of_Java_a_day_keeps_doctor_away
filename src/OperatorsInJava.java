@@ -112,7 +112,7 @@ public class OperatorsInJava {
 
         // instanceof()
         String text = "O frabjous day! Callooh! Callay!";
-        Integer num = 6;
+        Number num = 6;
 
         boolean answer = text instanceof String;
         System.out.println(answer);    // true
@@ -125,6 +125,29 @@ public class OperatorsInJava {
 
         answer = num instanceof Object;
         System.out.println(answer);    // true Integer != int (instanceof do not work with primitives)
+
+        answer =  num instanceof Long;
+        System.out.println(answer);    // false
+
+        answer =  num instanceof Double;
+        System.out.println(answer);    // false
+
+        answer =  num instanceof Float;
+        System.out.println(answer);    // false
+
+        // Operator precedence: Java reads operators right-to-left
+        int wage_2020 = 18;
+        int wage_2021 = 15;
+        int wage_2022 = 5;
+
+        double average = (wage_2020 + wage_2021 + wage_2022)/3d;
+        System.out.println(average);    // 12.666666666666666
+
+        average = (++wage_2020 + wage_2021-- + wage_2022)/3d;
+        System.out.println(average);    // 13.0
+
+        //..............................................................................................................
+
 
 
     }
