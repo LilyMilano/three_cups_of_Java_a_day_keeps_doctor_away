@@ -71,9 +71,61 @@ public class OperatorsInJava {
             System.out.println("Incorrect data. Please try again.");
         }
 
+        // nextLine(): It returns the input read from the console as a String.
+        // You should call nextLine() once for each line you want to read from the user.
+
         //..............................................................................................................
 
+        // Ternary Operators - Examples:
+
+        // Scanner entry = new Scanner(System.in); use the previous scanner defined in this scope
+        System.out.println("Enter your grade:");
+        double grade = entry.nextDouble();
+
+        if (grade >= 6){
+            System.out.println("You approved the exam");
+        }
+        else {
+            System.out.println("You failed the exam");
+        }
+
+        // Max number:
+        // Scanner entry = new Scanner(System.in); use the previous scanner defined in this scope
+        System.out.println("Enter the first integer number:");
+        int first = entry.nextInt();
+        System.out.println("Enter the second integer number:");
+        int second = entry.nextInt();
+        System.out.println("Enter the third integer number:");
+        int third = entry.nextInt();
+
+        // Ternary Operators
+        int max;
+        max = (first > second)?first:second;
+        max = (max > third)?max:third;
+        System.out.println(("The maximum number is: ").concat(String.valueOf(max)));
+
+        // Math.max() function
+        int maxNumber = Math.max(first, second);
+        // System.out.println(maxNumber);
+        int maxNumber1 = Math.max(maxNumber,third);
+        System.out.println(("The maximum number is: ").concat(String.valueOf(maxNumber1)));
+
+        // instanceof()
+        String text = "O frabjous day! Callooh! Callay!";
+        Integer num = 6;
+
+        boolean answer = text instanceof String;
+        System.out.println(answer);    // true
+
+        answer = text instanceof Object;
+        System.out.println(answer);    // true
+
+        answer = num instanceof Integer;
+        System.out.println(answer);    // true
+
+        answer = num instanceof Object;
+        System.out.println(answer);    // true Integer != int (instanceof do not work with primitives)
+
+
     }
-
-
 }
