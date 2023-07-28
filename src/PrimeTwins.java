@@ -21,7 +21,7 @@ public class PrimeTwins {
 
         List<List<Integer>> twins = getPrimeTwins(max);
 
-        System.out.println(twins);
+        System.out.println(twins);  // [[3, 5], [5, 7], [11, 13], [17, 19], [29, 31]]
 
     }
 
