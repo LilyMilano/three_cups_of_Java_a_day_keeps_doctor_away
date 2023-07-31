@@ -1,4 +1,4 @@
-package JavaBook;
+package Java_Barry_Burd;
 
 public class FirstSnippets {
     public static void main(String[] args) {
