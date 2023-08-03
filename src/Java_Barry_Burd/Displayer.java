@@ -2,6 +2,9 @@ package Java_Barry_Burd;
 
 // Javadoc comments
 
+import javax.swing.*;
+import static java.lang.System.out;
+
 /**
  * The Displayer class displays text
  * on the computer screen.
@@ -53,5 +56,76 @@ public class Displayer {
         numberOfAnniversaries = years / anniversaryEvery;
             System.out.println("Number of anniversaries: " + numberOfAnniversaries + ".");
             // Output: Number of anniversaries: 2.
+
+        // ***************************************************************
+
+        // Char type
+        char myLittleChar = 'b';
+        char myBigChar = Character.toUpperCase(myLittleChar);
+            System.out.println(myBigChar);  // Output: B
+
+        // ***************************************************************
+
+        // boolean type: Elevator Fitter 2
+        System.out.println();
+        System.out.println("True or False?");
+        System.out.println("You can fit all ten of the dectuplets on the elevator:");
+        System.out.println();
+
+        int weightPerPerson = 150;
+        int elevatorLimit = 1400;
+        int personsAdmitted = elevatorLimit / weightPerPerson;
+        boolean allTenOkay = personsAdmitted >= 10;
+
+        System.out.println(allTenOkay);     // Output: false
+
+        // ***************************************************************
+        /*Reference types: String and JFrame are the names of Java classes!!!
+        Every Java class is a reference type. If you declare a variable to have some type
+        that’s not a primitive type, the variable’s type is (most of the time) the name of a
+        Java class.*/
+
+        // Show a Frame
+
+        JFrame myFrame = new JFrame();
+        String myTitle = "Blank Frame";
+
+        myFrame.setTitle(myTitle);
+        myFrame.setSize(900,200);
+        myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        myFrame.setVisible(true);
+
+        // ***************************************************************
+
+        // Make change:
+        int total = 248;
+        int quarters = total / 25;
+        int whatsLeft = total % 25;
+
+        int dimes = whatsLeft / 10;
+        whatsLeft = whatsLeft % 10;
+
+        int nickels = whatsLeft / 5;
+        whatsLeft = whatsLeft % 5;
+
+        int cents = whatsLeft;
+
+        out.println();
+        out.println("From " + total + " cents you get");
+        out.println(quarters + " quarters");
+        out.println(dimes + " dimes");
+        out.println(nickels + " nickels");
+        out.println(cents + " cents");
+
+        /* Output:
+        From 248 cents you get
+        9 quarters
+        2 dimes
+        0 nickels
+        3 cents */
+
+        // ***************************************************************
+
+
     }
 }
