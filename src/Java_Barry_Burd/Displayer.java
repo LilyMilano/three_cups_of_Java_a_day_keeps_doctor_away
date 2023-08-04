@@ -111,11 +111,12 @@ public class Displayer {
         int cents = whatsLeft;
 
         out.println();
-        out.println("From " + total + " cents you get");
+        out.println("From " + total + " cents you get:");
         out.println(quarters + " quarters");
         out.println(dimes + " dimes");
         out.println(nickels + " nickels");
         out.println(cents + " cents");
+        out.println();
 
         /* Output:
         From 248 cents you get
@@ -125,6 +126,60 @@ public class Displayer {
         3 cents */
 
         // ***************************************************************
+
+        // Increment and decrement operators in Java:
+        int numberOfBunnies = 27;
+        ++numberOfBunnies;
+        out.println(numberOfBunnies);   // 28
+        out.println(++numberOfBunnies); // 29
+        out.println(numberOfBunnies);   // 29
+
+        int numberOfCats = 27;
+        numberOfCats++;
+        out.println();
+        out.println(numberOfCats);  // 28
+        out.println(numberOfCats++);    // 28
+        out.println(numberOfCats);  // 29
+        out.println();
+
+        // Prognostication Game:
+        int i = 10;
+        out.println(i++);   // 10
+        out.println(--i);   // 10
+        --i;
+        i--;
+        out.println(i);     // 8
+        out.println(++i);   // 9
+        out.println(i--);   // 9
+        out.println(i);     // 8
+        i++;
+        i = i++ + ++i;
+        out.println(i);     // 20
+        i = i++ + i++;
+        out.println(i);     //41
+        out.println();
+
+        // Assignment operators:
+        int numberOfDogs = 27;
+        int numberExtra = 53;
+
+        numberOfDogs += 1;
+        out.println(numberOfDogs);  // 28
+
+        numberOfDogs += 5;
+        out.println(numberOfDogs);  // 33
+
+        numberOfDogs +=  numberExtra;
+        out.println(numberOfDogs);  // 86
+
+        numberOfDogs *= 2;
+        out.println(numberOfDogs);  // 172
+
+        out.println(numberOfDogs -= 7); // 165
+
+        out.println(numberOfDogs = 100);    // 100
+        out.println();
+
 
 
     }
