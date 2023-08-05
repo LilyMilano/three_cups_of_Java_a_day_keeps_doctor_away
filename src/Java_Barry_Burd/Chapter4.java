@@ -13,7 +13,7 @@ import static java.lang.System.out;
  * @version 1.0 1/24/22
  * @see java.lang.System
  */
-public class Displayer {
+public class Chapter4 {
 
     /**
      * The main method is where
@@ -178,6 +178,18 @@ public class Displayer {
         out.println(numberOfDogs -= 7); // 165
 
         out.println(numberOfDogs = 100);    // 100
+        out.println();
+
+        // Exercise:
+        int j = 10;
+
+        j += 2;
+        j -= 5;
+        j *= 6;
+
+        out.println(j); // 42
+        out.println(j += 3);    //   45
+        out.println(j /= 2);    //   22
         out.println();
 
 

@@ -1,4 +1,4 @@
-/*
+package Fundamentals;/*
  * Crea un programa que encuentre y muestre todos los pares de números primos
  * gemelos en un rango concreto.
  * El programa recibirá el rango máximo como número entero positivo.

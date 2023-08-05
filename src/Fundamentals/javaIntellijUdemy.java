@@ -1,3 +1,5 @@
+package Fundamentals;
+
 public class javaIntellijUdemy {
     public static void main(String[] args) {
         int age = 20;

@@ -1,9 +1,13 @@
-import javax.swing.*;
+package Fundamentals;
 
-public class dataEntry {
+import java.util.Scanner;
+
+public class dataEntryByTerminal {
     public static void main(String[] args) {
-    String value = JOptionPane.showInputDialog(null, "Enter an integer number: ");
-    int decimalValue = Integer.parseInt(value);
+    Scanner entry = new Scanner(System.in);
+        System.out.println("Enter an integer number: ");
+
+    int decimalValue = entry.nextInt();
         System.out.println("Decimal system: " + decimalValue); // Decimal system: 450
 
         String binarySystem = Integer.toBinaryString(decimalValue);
@@ -14,10 +18,6 @@ public class dataEntry {
 
         String octalSystem = Integer.toOctalString(decimalValue);
         System.out.println("Octal System: " + octalSystem); // Octal System: 702
-
-        String results = "Decimal system: " + decimalValue + "\nBinary System: " + binarySystem + "\nHexadecimal System: " + hexSystem + "\nOctal System: " + octalSystem;
-
-        JOptionPane.showMessageDialog(null, results);
 
     }
 }

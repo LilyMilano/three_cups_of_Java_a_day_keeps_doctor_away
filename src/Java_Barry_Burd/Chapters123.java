@@ -1,6 +1,6 @@
 package Java_Barry_Burd;
 
-public class FirstSnippets {
+public class Chapters123 {
     public static void main(String[] args) {
 
         //Pay Barry
