@@ -2,6 +2,8 @@ package Java_Barry_Burd;
 
 import java.util.Random;
 import java.util.Scanner;
+
+import static java.lang.System.in;
 import static java.lang.System.out;
 
 public class Chapter5 {
@@ -11,7 +13,7 @@ public class Chapter5 {
         // If Statements:
         // Guessing Game:
 
-        Scanner keyboard = new Scanner(System.in);
+        Scanner keyboard = new Scanner(in);
         out.println("Enter an int from 1 to 10: ");
 
         int inputNumber = keyboard.nextInt();
@@ -29,7 +31,7 @@ public class Chapter5 {
         out.println("Thank you for playing.");
         out.println();
 
-        keyboard.close();
+        // keyboard.close();
 
                 /* Some explanations:
 
@@ -42,8 +44,81 @@ public class Chapter5 {
         This statement does some housekeeping to disconnect the Java program from
         the computer keyboard. Using close() to explicitly detach from the keyboard is good practice.
          */
-            }
+
+        // Don't tell them they lost ♥
+        keyboard = new Scanner(in);
+        out.println("Enter an int from 1 to 10: ");
+
+        int inputInt = keyboard.nextInt();
+        int randomInt = new Random().nextInt(10) + 1;
+
+        if (inputInt == randomInt) {
+            out.println("*You win*");
         }
+
+        out.println("That was a very good guess :-)");
+        out.println("The random number was: " + randomInt + ".");
+        out.println("Thank you for playing.");
+        out.println();
+
+        // keyboard.close();
+
+        // Elevator fitter:
+
+        int weightOfADectuple = 150;
+        int elevatorWeightLimit = 1400;
+
+        if (elevatorWeightLimit >= weightOfADectuple * 10) {
+            out.println("You can fit all ten of the");
+            out.println("Brickenchicker dectuples");
+            out.println("on the elevator.");
+        } else {
+            out.println("You can't fit all ten of the");
+            out.println("Brickenchicker dectuples");
+            out.println("on the elevator.");
+        }
+        out.println();
+
+        // Check password:
+        out.println("What's the password?");
+        keyboard = new Scanner(in);
+        String password = keyboard.next();
+
+        out.println("You typed >>" + password + "<<");
+        out.println();
+
+        if(password == "swordfish") {
+            out.println("""
+                    The word you typed is stored
+                    in the same place as the real
+                    password. You must be a hacker.""");
+        } else {
+            out.println("""
+                    The word you typed is not
+                    stored in the same place as
+                    the real password, but that's
+                    not big deal.""");
+        }
+        out.println();
+
+        if(password.equals("swordfish")) {
+            out.println("""
+                    The word you typed has the
+                    same characters as the real
+                    password. You can use our
+                    precious system.""");
+        } else {
+            out.println("""
+                    The word you typed doesn't
+                    have the same characters as
+                    the real password. You can't
+                    use our precious system.""");
+        }
+
+        keyboard.close();
+
+    }
+}
 
 
 
