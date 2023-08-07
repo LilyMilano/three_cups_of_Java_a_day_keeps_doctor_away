@@ -1,10 +1,13 @@
 package Java_Barry_Burd;
 
+import java.awt.*;
 import java.util.Random;
 import java.util.Scanner;
 
-import static java.lang.System.in;
-import static java.lang.System.out;
+import static java.lang.System.*;
+
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 public class Chapter5 {
 
@@ -87,7 +90,7 @@ public class Chapter5 {
         out.println("You typed >>" + password + "<<");
         out.println();
 
-        if(password == "swordfish") {
+        if (password == "swordfish") {
             out.println("""
                     The word you typed is stored
                     in the same place as the real
@@ -101,7 +104,7 @@ public class Chapter5 {
         }
         out.println();
 
-        if(password.equals("swordfish")) {
+        if (password.equals("swordfish")) {
             out.println("""
                     The word you typed has the
                     same characters as the real
@@ -113,6 +116,76 @@ public class Chapter5 {
                     have the same characters as
                     the real password. You can't
                     use our precious system.""");
+        }
+        out.println();
+        // keyboard.close();
+
+        /*In addition to its equals method, Java has an equalsIgnoreCase
+        method. Even though
+        "SWORDFISH".equals("swordfish") is false, its close cousin:
+        "SWORDFISH".equalsIgnoreCase("swordfish")
+        is true.
+
+        A text block is a bunch of text surrounded on both
+        sides by three double quotes (""").
+        */
+
+        // Checking username and password (authenticator):
+
+        String username = JOptionPane.showInputDialog("Username:");
+        String passwordKey = JOptionPane.showInputDialog("Password");
+
+        if (
+                (username != null && passwordKey != null) &&
+                        (
+                                (username.equals("bburd") && passwordKey.equals("swordfish")) ||
+                                        (username.equals("hritter") && passwordKey.equals("preakston")) ||
+                                        (username.equals("lili") && passwordKey.equals("java"))
+                        )
+        ) {
+            JOptionPane.showMessageDialog(null, "You are in.");
+        } else {
+            JOptionPane.showMessageDialog(null, "You are suspicious.");
+        }
+        {
+            UIManager.put("TextField.font", new Font("Dialog", Font.BOLD, 14));
+        }
+        /* About line "UIManager....(Is not a statement error)
+        In Java, statements need to be inside a method or a code block - you can't just have a standalone statement
+        like that outside of any block. Wrapping it in {} or putting it in a method fixes the issue.  */
+
+        /*
+        * JOptionPane.showInputDialog works nicely because the user’s input (username and password) are mere strings of characters.
+        * If you want the user to input a number (an int or a double, for example), you have to do some extra work.
+            For example, to get an int value from the user, type something like:
+            int numberOfCows = Integer.parseInt(JOptionPane.showInputDialog("How many cows?")).
+            The extra Integer.parseInt stuff forces your text field’s input to be an int value.
+        * To get a double value from the user, type something like:
+            double fractionOfHolsteins = Double.parseDouble(JOptionPane.showInputDialog("Hosteins:")).
+            The extra Double.parseDouble business forces your text field’s input to be a double value.
+         */
+
+        //**************************************************************************************************************
+
+        // Nested If Statements: Russian matryoshka nesting dolls :-)
+        // Authenticator2:
+
+        keyboard = new Scanner(in);
+
+        out.println("Username: ");
+        String user = keyboard.next();
+
+        if (user.equals("bburd")) {
+            out.println("Token: ");
+            String token = keyboard.next();
+
+            if (token.equals("swordfish")) {
+                out.println("You're in.");
+            } else {
+                out.println("Invalid token");
+            }
+        } else {
+            out.println("Unknown user");
         }
 
         keyboard.close();
