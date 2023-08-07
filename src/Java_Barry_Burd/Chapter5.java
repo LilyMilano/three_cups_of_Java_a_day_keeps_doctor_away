@@ -132,6 +132,10 @@ public class Chapter5 {
 
         // Checking username and password (authenticator):
 
+        {
+            UIManager.put("TextField.font", new Font("Dialog", Font.BOLD, 14));
+        }
+
         String username = JOptionPane.showInputDialog("Username:");
         String passwordKey = JOptionPane.showInputDialog("Password");
 
@@ -147,9 +151,7 @@ public class Chapter5 {
         } else {
             JOptionPane.showMessageDialog(null, "You are suspicious.");
         }
-        {
-            UIManager.put("TextField.font", new Font("Dialog", Font.BOLD, 14));
-        }
+
         /* About line "UIManager....(Is not a statement error)
         In Java, statements need to be inside a method or a code block - you can't just have a standalone statement
         like that outside of any block. Wrapping it in {} or putting it in a method fixes the issue.  */
@@ -188,10 +190,67 @@ public class Chapter5 {
             out.println("Unknown user");
         }
 
-        keyboard.close();
+        // keyboard.close();
 
+        // Exercise: I change my mind:
+        /*Modify the program in Listing 5-4 so that, if the user clicks Cancel for either the
+        username or the password, the program replies with a Not enough information
+        message.*/
+
+        String nickname = JOptionPane.showInputDialog("Username:");
+        String tokenKey = JOptionPane.showInputDialog("Password");
+
+        if (
+                (nickname != null && tokenKey != null) &&
+                        (
+                                (nickname.equals("bburd") && tokenKey.equals("swordfish")) ||
+                                        (nickname.equals("hritter") && tokenKey.equals("preakston")) ||
+                                        (nickname.equals("lili") && tokenKey.equals("java"))
+                        )
+        ) {
+            JOptionPane.showMessageDialog(null, "You are in.");
+        } else {
+            JOptionPane.showMessageDialog(null, "Not enough information.");
+        }
+        out.println();
+        //**************************************************************************************************************
+
+        // Choosing among many alternatives:
+        // Switch statement
+
+        keyboard = new Scanner(in);
+        out.println("Which verse? ");
+        int verse = keyboard.nextInt();
+
+        switch (verse) {
+            case 1 -> out.println("That's because he has no brain.");
+            case 2 -> out.println("That's because he is a pain.");
+            case 3 -> out.println("'Cause this is the last refrain.");
+            default -> out.println("No such verse. Please try again.");
+        }
+
+        out.println("Oh, oh, oh, oh");
+        out.println();
+
+        // keyboard.close();
+
+        //..............................................................................................................
+        // With more than one value in each case of a switch statement:
+
+        keyboard = new Scanner(in);
+        out.println("Will you pay me? ");
+        String reply = keyboard.next();
+
+        switch (reply) {
+            case "Yes", "YES", "Y", "y", "yes", "OK", "Okay", "okay" -> out.println("Thank you!");
+            case "No", "NO", "N", "n", "no", "NOPE", "Nope", "nope" -> out.println("Thanks for nothing!");
+        }
+
+        out.println();
+        keyboard.close();
     }
 }
+
 
 
 
