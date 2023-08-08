@@ -216,7 +216,7 @@ public class Chapter5 {
         //**************************************************************************************************************
 
         // Choosing among many alternatives:
-        // Switch statement
+        // 1. Switch statement
 
         keyboard = new Scanner(in);
         out.println("Which verse? ");
@@ -233,8 +233,116 @@ public class Chapter5 {
         out.println();
 
         // keyboard.close();
+        //..............................................................................................................
+
+        // 2. Since Java 14:
+        keyboard = new Scanner(in);
+        out.println("Which verse? ");
+        int chosenVerse = keyboard.nextInt();
+        String line;
+
+        line = switch (chosenVerse) {
+            case 1 -> "That's because he has no brain.";
+            case 2 -> "That's because he is a pain.";
+            case 3 -> "'Cause this is the last refrain.";
+            default -> "No such verse. Please try again.";
+        };
+
+        out.println(line);
+        out.println("Oh, oh, oh, oh");
+        out.println();
+
+        // keyboard.close();
 
         //..............................................................................................................
+
+        /* 3. You can squeeze even more goodness out of Java’s switch expression. For example,
+        you don’t have to assign the expression’s value to a variable. You can bypass
+        the variable and print the switch expression’s value: */
+
+        keyboard = new Scanner(in);
+        out.println("Which verse? ");
+        chosenVerse = keyboard.nextInt();
+
+        out.println(switch (chosenVerse) {
+            case 1 -> "That's because he has no brain.";
+            case 2 -> "That's because he is a pain.";
+            case 3 -> "'Cause this is the last refrain.";
+            default -> "No such verse. Please try again.";
+        });
+
+        out.println("Oh, oh, oh, oh");
+        out.println();
+
+        // keyboard.close();
+
+        //..............................................................................................................
+        // 4. Before Java 14:
+        // The old switch statement: Use colons (:) instead of arrows (->)
+        // It need break statements to bypass any remaining cases.
+
+        keyboard = new Scanner(in);
+        out.println("Which verse? ");
+        chosenVerse = keyboard.nextInt();
+
+        switch (chosenVerse) {
+            case 1:
+                out.println("That's because he has no brain.");
+                break;
+            case 2:
+                out.println("That's because he is a pain.");
+                break;
+            case 3:
+                out.println("'Cause this is the last refrain.");
+                break;
+            default:
+                out.println("No such verse. Please try again.");
+                break;
+        }
+
+        out.println("Oh, oh, oh, oh");
+        out.println();
+
+        // keyboard.close();
+
+        //..............................................................................................................
+        // A switch Statement with Fall-Through (string case)
+
+        keyboard = new Scanner(in);
+        out.println("Which verse? ");
+        String typedVerse = keyboard.next();
+
+        switch (typedVerse) {
+            case "three":
+                out.print("Last refrain, ");
+                out.println("last refrain,");
+            case "two":
+                out.print("He is a pain, ");
+                out.println("he is a pain,");
+            case "one":
+                out.print("Has no brain, ");
+                out.println("has no brain,");
+        }
+
+        out.print("In the rain, ");
+        out.println("in the rain.");
+
+        out.println("Oh, oh, oh, oh");
+        out.println();
+
+        // keyboard.close();
+
+        // Output:
+        /*Which verse?
+        three
+        Last refrain, last refrain,
+        He is a pain, he is a pain,
+        Has no brain, has no brain,
+        In the rain, in the rain.
+        Oh, oh, oh, oh*/
+
+        //..............................................................................................................
+
         // With more than one value in each case of a switch statement:
 
         keyboard = new Scanner(in);
@@ -244,12 +352,139 @@ public class Chapter5 {
         switch (reply) {
             case "Yes", "YES", "Y", "y", "yes", "OK", "Okay", "okay" -> out.println("Thank you!");
             case "No", "NO", "N", "n", "no", "NOPE", "Nope", "nope" -> out.println("Thanks for nothing!");
+            default -> out.println("I don't understand you. Again, please?");
         }
 
         out.println();
-        keyboard.close();
+        // keyboard.close();
+
+        // *************************************************************************************************************
+
+        // Practices:
+
+        /*  MONTH-TO-MONTH RESUSCITATION:
+        Write a program that inputs the name of a month and outputs the number of days
+        in that month. In this first version of the program, assume that February always
+        has 28 days. Use Java’s switch statement.*/
+
+        keyboard = new Scanner(in);
+        out.println("Enter your birth month. (e.g. June):");
+        String month = keyboard.next();
+
+        switch (month) {
+            case "February" -> out.println(month + " has 28 days.");
+            case "April", "June", "September", "November" -> out.println(month + " has 30 days.");
+            case "January", "March", "May", "July", "August", "October", "December" ->
+                    out.println(month + " has 31 days.");
+            default -> out.println("Invalid month.");
+        }
+
+        out.println();
+        // keyboard.close();
+
+        // .............................................................................................................
+        /*  LEAPING TO CONCLUSIONS
+        Make changes to your code from the earlier section “Month-to-Month Resuscitation.”
+        Has the user input a month name and also yes or no in response to the
+        question Is it a leap year?*/
+
+        keyboard = new Scanner(in);
+        out.println("Enter your birth month. (e.g. June):");
+        month = keyboard.next();
+        out.println("Is it a leap year? (yes/no)");
+        String isLeapYear = keyboard.next();
+
+        switch (month) {
+            case "February" -> {
+                if (isLeapYear.equals("yes")) {
+                    out.println(month + " has 29 days.");
+                } else {
+                    out.println(month + " has 28 days.");
+                }
+                ;
+            }
+            case "April", "June", "September", "November" -> out.println(month + " has 30 days.");
+            case "January", "March", "May", "July", "August", "October", "December" ->
+                    out.println(month + " has 31 days.");
+            default -> out.println("Invalid month.");
+        }
+
+        out.println();
+        // keyboard.close();
+
+        // .............................................................................................................
+        /*HOW ABOUT A DATE?
+        Make changes to your code from the earlier section “Leaping to Conclusions.”
+        Rather than mimic Listing 5-6, use a switch expression of the kind you find in
+        Listing 5-7. Then use Java’s old-style switch statement like the one you see in
+        Listing 5-8.*/
+
+        keyboard = new Scanner(in);
+        out.print("Enter your birth month (e.g. June): ");
+        month = keyboard.next();
+
+        System.out.print("Is it a leap year? (yes/no): ");
+        isLeapYear = keyboard.next();
+
+        switch (month.toLowerCase()) {
+            case "january":
+            case "march":
+            case "may":
+            case "july":
+            case "august":
+            case "october":
+            case "december":
+                out.print(month + " has 31 days.");
+                break;
+            case "april":
+            case "june":
+            case "september":
+            case "november":
+                out.print(month + " has 30 days.");
+                break;
+            case "february":
+                if (isLeapYear.equalsIgnoreCase("yes")) {
+                    out.print(month + " has 29 days.");
+                } else {
+                    out.print(month + " has 28 days.");
+                }
+                break;
+            default:
+                out.print("Invalid month entered");
+                break;
+        }
+
+        // keyboard.close();
+
+        // .............................................................................................................
+
+        // THE YIELD APP
+        out.println();
+        keyboard = new Scanner(in);
+        out.print("Enter your birth month (e.g. June): ");
+        month = keyboard.next();
+
+        out.println(switch (month) {
+            case "January", "March", "May", "July", "August", "October", "December" -> 31;
+            case "April", "June", "September", "November" -> 30;
+            case "February" -> {
+                out.println("Leap year (true/false)? ");
+                boolean isLeap =  keyboard.nextBoolean();
+                if(isLeap) {
+                    yield 29;
+                } else {
+                    yield 28;
+                }
+            }
+            default -> 0;
+        } + " days");
+
     }
+
 }
+
+
+
 
 
 
