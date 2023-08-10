@@ -251,11 +251,110 @@ public class Chapter6 {
         // .............................................................................................................
 
         // SEEING STARS:
-        for (int row = 0; row < 5; row++) {
-            for (int column = 0; column < 5; column++) {
-                out.print("*");
+        for (int row = 0; row < 5; row++) {     // This is the outer for loop that iterates 5 times, with row taking values 0 through 4. This will control the number of rows printed.
+            for (int column = 0; column < 5; column++) {    // This is the inner for loop that iterates 5 times for each iteration of the outer loop. The column variable takes values 0 through 4. This will control the number of columns printed.
+                out.print("*");     // This prints a single "*" character without a newline. This will print a star for each column.
             }
-            out.println();
+            out.println();      // This prints a newline after each row is completed.
         }
+        out.println();
+        /*
+            Output:
+
+            *****
+            *****
+            *****
+            *****
+            *****
+
+            So for each iteration of the outer loop (each row), the inner loop will print 5 stars (columns).
+            Then a newline is printed to start a new line for the next row.
+            The outer loop executes 5 times to print 5 rows. The inner loop prints 5 columns per row.
+            So the end result is a 5x5 grid of stars, with each row on a new line.
+
+            */
+        // .............................................................................................................
+        // SEEING MORE AND MORE STARS:
+
+        for (int row = 0; row < 5; row++) {    // This declares a for loop with the variable row that will iterate from 0 up to but not including 5.
+            for (int column = 0; column <= row; column++) {     // This declares another for loop nested inside the first one. This loop iterates over the variable column from 0 up to and including the current value of row.
+                System.out.print("*");  // This prints out a * character without a newline.
+            }
+            System.out.println();   // This prints out a newline character after each full row is printed.
+        }
+
+        out.println();
+
+        /*
+            Output:
+
+            *
+            **
+            ***
+            ****
+            *****
+
+            So for each iteration of the outer loop row (from 0 to 4), the inner loop column will print out a
+            number of * characters from 0 up to the value of row. Then a newline is printed to end that row.
+            The end result is it prints out a triangle pattern of asterisks of increasing length on each line.
+
+            */
+
+        // .............................................................................................................
+        // THREE TRIANGLES:
+        /*Write a program that uses loops to display three copies of the following pattern,
+        one after another:
+
+        *****
+        ****
+        ***
+        **
+        *
+
+        */
+
+        for (int copy = 0; copy < 3; copy++) {      // This starts an outer loop that will repeat 3 times, with copy as the loop variable starting at 0.
+            for (int row = 0; row < 5; row++) {     // This starts a loop for each row of the triangle, with row as the loop variable from 0 to 4.
+                for (int column = 0; column <= 4 - row; column++) {     // This starts a loop for each column, printing from 0 to 4 minus the current row value. This prints the appropriate number of asterisks for that row.
+                    System.out.print("*");          // This prints an asterisk without a newline.
+                }
+                System.out.println();
+            }
+        }
+        out.println();
+
+        /* Explanation:
+
+        So for each of the 3 copies, it will print a 5 row triangle pattern by printing the
+        appropriate number of asterisks per row.
+        The 4 here is because the full triangle is 5 rows tall. Since it starts from 0, the last row is row 4.
+
+        By subtracting the current row number, we get the number of asterisks to print for that row:
+
+        On row 0, 4 - 0 = 4 (0, 1, 2, 3, 4) > 5 asterisks
+        On row 1, 4 - 1 = 3 (0, 1, 2, 3) > 4 asterisks
+        On row 2, 4 - 2 = 2 (0, 1, 2) > 3 asterisks
+        On row 3, 4 - 3 = 1 (0, 1) > 2 asterisk
+        On row 4, 4 - 4 = 0 (0) > 1 asterisks (loop ends immediately)
+
+        Output:
+
+        *****  // Row 0 (5 asterisks)
+        ****   // Row 1 (4 asterisks)
+        ***    // Row 2 (3 asterisks)
+        **     // Row 3 (2 asterisks)
+        *      // Row 4 (1 asterisk)
+        *****
+        ****
+        ***
+        **
+        *
+        *****
+        ****
+        ***
+        **
+        *
+
+        */
     }
 }
