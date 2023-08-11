@@ -1,5 +1,9 @@
 package Java_Barry_Burd;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -246,7 +250,7 @@ public class Chapter6 {
         out.println(x + " factorial equals to: " + factorial);
 
         out.println();
-        keyboard.close();
+        // keyboard.close();
 
         // .............................................................................................................
 
@@ -356,5 +360,161 @@ public class Chapter6 {
         *
 
         */
+
+        // .............................................................................................................
+
+        // DO...WHILE LOOP:
+
+        // To delete or not to delete:
+
+        File evidence = new File("cookedBooks.txt");
+
+        try {
+            out.println("Looking for " + evidence.getCanonicalPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if (evidence.exists()) {
+            keyboard = new Scanner(in);
+            char reply;
+
+            do {
+                out.println("Delete evidence? (y/n)");
+                reply = keyboard.findWithinHorizon(".", 0).charAt(0);
+            } while (reply != 'y' && reply != 'Y' && reply != 'n' && reply != 'N');
+
+            if (reply == 'y' || reply == 'Y') {
+                out.println("Okay, here goes...");
+
+                try {
+                    Files.delete(Paths.get(evidence.getAbsolutePath()));
+                    out.println("The evidence has been deleted.");
+                } catch (IOException e) {
+                    out.println("Error deleting file: " + e.getMessage());
+                }
+
+            } else {
+                out.println("Sorry, buddy. Just asking.");
+            }
+
+            out.println();
+            // keyboard.close();
+        }
+        // .............................................................................................................
+
+        //  A modified repeating guessing game (bad code):
+
+        keyboard = new Scanner(in);
+
+        numGuesses = 0;
+        randomNumber = new Random().nextInt(10) + 1;
+
+        out.println(" ***************** ");
+        out.println("Welcome to the Guessing Game");
+        out.println(" ***************** ");
+        out.println();
+
+        out.print("Enter an int from 1 to 10: ");
+        inputNumber = keyboard.nextInt();
+        numGuesses++;
+
+        do {
+            out.println();
+            out.println("Try again...");
+            out.print("Enter an int from 1 to 10: ");
+            inputNumber = keyboard.nextInt();
+            numGuesses++;
+        } while (inputNumber != randomNumber);
+        out.println("You win after " + numGuesses + " guesses.");
+
+
+        out.println();
+        // keyboard.close();
+
+        /*The code does not work correctly. On the first try, the inputNumber
+        is not compared to the randomNumber to check a match to see if the
+        user guessed or failed. */
+
+        // .............................................................................................................
+
+        /*
+        LET’S BUST OUT OF HERE:
+        In Chapter 5, you use break statements to jump out of a switch.
+        But a break statement can also play a role inside a loop.
+        If it were not for the break statement, the loop would run forever.
+        Fortunately, when you execute the break statement, Java jumps
+        to the code immediately after the loop.
+        */
+
+        keyboard = new Scanner(in);
+
+        while (true) {
+            out.println("Enter an int value: ");
+            int l = keyboard.nextInt();
+            if(l == 0) {
+                break;
+            }
+            out.println(l);
+        }
+        out.println("Done!");
+        out.println();
+        // keyboard.close();
+
+
+        // .............................................................................................................
+        /*
+        CARRY ON AND KEEP CODING: continue statement
+        In addition to its break statement, Java has a continue statement. When you execute
+        a continue statement, Java skips to the end of its loop and begins the next
+        iteration of that loop.
+        */
+
+        keyboard = new Scanner(in);
+
+        while (true) {
+            out.print("Enter an int value: ");
+            int l = keyboard.nextInt();
+            if(l > 10) {
+                continue;
+            }
+            if(l == 0) {
+                break;
+            }
+            out.println(l);
+        }
+        out.println("Done!");
+        out.println();
+
+        keyboard.close();
+
+        // .............................................................................................................
+
+        for (int i = 0; i < 5; i++) {
+            if (i == 2) {
+                continue; // Skips the current iteration when 'i' is equal to 2
+            }
+            System.out.println(i);
+        }
+
+        /*Output:
+        In this example, when 'i' is equal to 2, the continue statement is
+        executed, and the loop immediately moves on to the next iteration.
+        As a result, the number 2 is skipped, and the output will be:
+
+        0
+        1
+        3
+        4
+
+        Overall, the continue statement provides a way to control the
+        flow of execution within a loop and skip certain iterations
+        based on specific conditions.*/
+
+        // .............................................................................................................
+
+
+
     }
+
 }
