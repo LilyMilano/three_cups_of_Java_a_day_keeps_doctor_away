@@ -3,7 +3,11 @@ package Java_Barry_Burd;
 // Javadoc comments
 
 import javax.swing.*;
+
 import static java.lang.System.out;
+
+import java.io.*;
+import java.util.*;
 
 /**
  * The Displayer class displays text
@@ -26,27 +30,27 @@ public class Chapter4 {
 
         // Using variables
         double amountInAccount = 50.22;
-        amountInAccount +=  1000000.00;
-            System.out.println("You have $" + amountInAccount + " in your account.");
-            // Output: You have $1000050.22 in your account.
+        amountInAccount += 1000000.00;
+        System.out.println("You have $" + amountInAccount + " in your account.");
+        // Output: You have $1000050.22 in your account.
         amountInAccount = 2000000.00;
-            System.out.println("Now you have even more! You have $" + amountInAccount + " in your account.");
-            // Output: Now you have even more! You have $2000000.0 in your account.
+        System.out.println("Now you have even more! You have $" + amountInAccount + " in your account.");
+        // Output: Now you have even more! You have $2000000.0 in your account.
 
         float amountInSavingAccount;
         amountInSavingAccount = 50.22F;
         amountInSavingAccount += 1000000.00F;
-            System.out.println("You have $" + amountInSavingAccount + " in your saving account.");
-            // Output: You have $1000050.25 in your saving account.
+        System.out.println("You have $" + amountInSavingAccount + " in your saving account.");
+        // Output: You have $1000050.25 in your saving account.
 
         // Elevator Fitter:
         int weightOfAPerson = 150;
         int elevatorWeightLimit = 1400;
         int numberOfPeople;
 
-        numberOfPeople =  elevatorWeightLimit / weightOfAPerson;
-            System.out.println("You can fit " + numberOfPeople + " people on the elevator.");
-            // Output: You can fit 9 people on the elevator.
+        numberOfPeople = elevatorWeightLimit / weightOfAPerson;
+        System.out.println("You can fit " + numberOfPeople + " people on the elevator.");
+        // Output: You can fit 9 people on the elevator.
 
         // Leap year anniversary:
         int years = 8;
@@ -54,15 +58,15 @@ public class Chapter4 {
         int anniversaryEvery = 4;
 
         numberOfAnniversaries = years / anniversaryEvery;
-            System.out.println("Number of anniversaries: " + numberOfAnniversaries + ".");
-            // Output: Number of anniversaries: 2.
+        System.out.println("Number of anniversaries: " + numberOfAnniversaries + ".");
+        // Output: Number of anniversaries: 2.
 
         // ***************************************************************
 
         // Char type
         char myLittleChar = 'b';
         char myBigChar = Character.toUpperCase(myLittleChar);
-            System.out.println(myBigChar);  // Output: B
+        System.out.println(myBigChar);  // Output: B
 
         // ***************************************************************
 
@@ -87,13 +91,13 @@ public class Chapter4 {
 
         // Show a Frame
 
-        JFrame myFrame = new JFrame();
+       /* JFrame myFrame = new JFrame();
         String myTitle = "Blank Frame";
 
         myFrame.setTitle(myTitle);
-        myFrame.setSize(900,200);
+        myFrame.setSize(900, 200);
         myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myFrame.setVisible(true);
+        myFrame.setVisible(true);*/
 
         // ***************************************************************
 
@@ -169,7 +173,7 @@ public class Chapter4 {
         numberOfDogs += 5;
         out.println(numberOfDogs);  // 33
 
-        numberOfDogs +=  numberExtra;
+        numberOfDogs += numberExtra;
         out.println(numberOfDogs);  // 86
 
         numberOfDogs *= 2;
@@ -192,7 +196,34 @@ public class Chapter4 {
         out.println(j /= 2);    //   22
         out.println();
 
+        // ***************************************************************
+        /*Given two strings of lowercase English letters, A and B, perform the following operations:
+        1. Sum the lengths of A and B.
+        2. Determine if A is lexicographically larger than B (i.e.: does  come before  in the dictionary?).
+        3. Capitalize the first letter in A and B and print them on a single line, separated by a space.*/
 
+        Scanner keyboard = new Scanner(System.in);
+        String A = keyboard.nextLine();
+        String B = keyboard.nextLine();
+        keyboard.close();
 
+        String lowerA = A.toLowerCase();
+        String lowerB = B.toLowerCase();
+
+        int lengthSum = lowerA.length() + lowerB.length();
+        System.out.println(lengthSum);
+
+        if (lowerA.compareTo(lowerB) > 0) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+
+        String capitalizedA = capitalize(lowerA);
+        String capitalizedB = capitalize(lowerB);
+        System.out.println(capitalizedA + " " + capitalizedB);
+    }
+    public static String capitalize(String str) {
+        return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 }
