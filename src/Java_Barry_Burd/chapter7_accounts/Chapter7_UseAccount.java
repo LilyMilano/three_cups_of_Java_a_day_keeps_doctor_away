@@ -1,4 +1,6 @@
-package Java_Barry_Burd;
+package Java_Barry_Burd.chapter7_accounts;
+
+import Java_Barry_Burd.chapter7_accounts.Chapter7_Account;
 
 import static java.lang.System.out;
 public class Chapter7_UseAccount {
