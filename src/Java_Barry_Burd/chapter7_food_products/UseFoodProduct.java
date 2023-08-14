@@ -27,12 +27,10 @@ public class UseFoodProduct {
         product3.servings = 5;
         product3.caloriesPerServing  = 10.0;
 
-        // Using Objects Fields - Dot Notation
-        // Printing values:
-
-        System.out.println("Product: " + product1.foodType + "\n" + "Weight (grams): " + product1.weight + "\n" + "Cost: $" + product1.cost + "\n" + "Servings: " + product1.servings + "\n" + "Calories Per Serving: " + product1.caloriesPerServing + "\n");
-        System.out.println("Product: " + product2.foodType + "\n" + "Weight (grams): " + product2.weight + "\n" + "Cost: $" + product2.cost + "\n" + "Servings: " + product2.servings + "\n" + "Calories Per Serving: " + product2.caloriesPerServing + "\n");
-        System.out.println("Product: " + product3.foodType + "\n" + "Weight (grams): " + product3.weight + "\n" + "Cost: $" + product3.cost + "\n" + "Servings: " + product3.servings + "\n" + "Calories Per Serving: " + product3.caloriesPerServing + "\n");
+        // Using display() - Dot Notation
+        product1.display();
+        product2.display();
+        product3.display();
 
         /* Output:
         Product: Peach Slices
@@ -53,5 +51,18 @@ public class UseFoodProduct {
         Servings: 5
         Calories Per Serving: 10.0
         */
+
+        //..............................................................................................................
+
+        // Using Objects Fields - Dot Notation
+        // Printing values:
+
+        /*
+        System.out.println("Product: " + product1.foodType + "\n" + "Weight (grams): " + product1.weight + "\n" + "Cost: $" + product1.cost + "\n" + "Servings: " + product1.servings + "\n" + "Calories Per Serving: " + product1.caloriesPerServing + "\n");
+        System.out.println("Product: " + product2.foodType + "\n" + "Weight (grams): " + product2.weight + "\n" + "Cost: $" + product2.cost + "\n" + "Servings: " + product2.servings + "\n" + "Calories Per Serving: " + product2.caloriesPerServing + "\n");
+        System.out.println("Product: " + product3.foodType + "\n" + "Weight (grams): " + product3.weight + "\n" + "Cost: $" + product3.cost + "\n" + "Servings: " + product3.servings + "\n" + "Calories Per Serving: " + product3.caloriesPerServing + "\n");
+        */
+
+
     }
 }

@@ -23,12 +23,10 @@ public class UseOrganization {
         organization3.annualRevenue = 800000.00;
         organization3.profitMaking = true;
 
-        // Using Objects Fields - Dot Notation
-        // Printing values:
-
-        out.println(organization1.name + ", a " + organization1.getStatus() + " organization, has an annual revenue such as $" + organization1.annualRevenue);
-        out.println(organization2.name + ", a " + organization2.getStatus() + " organization, has an annual revenue such as $" + organization2.annualRevenue);
-        out.println(organization3.name + ", a " + organization3.getStatus() + " organization, has an annual revenue such as $" + organization3.annualRevenue);
+        // Using display() - Dot Notation
+        organization1.display();
+        organization2.display();
+        organization3.display();
 
         /*
         Output:
@@ -36,6 +34,11 @@ public class UseOrganization {
         Charity Space, a not-profit-making organization, has an annual revenue such as $2000000.5
         Brand Solutions, a profit-making organization, has an annual revenue such as $800000.0
         */
+
+        // Print without method:
+        // out.println(organization1.name + ", a " + organization1.getStatus() + " organization, has an annual revenue such as $" + organization1.annualRevenue);
+        // out.println(organization2.name + ", a " + organization2.getStatus() + " organization, has an annual revenue such as $" + organization2.annualRevenue);
+        // out.println(organization3.name + ", a " + organization3.getStatus() + " organization, has an annual revenue such as $" + organization3.annualRevenue);
 
 
 
