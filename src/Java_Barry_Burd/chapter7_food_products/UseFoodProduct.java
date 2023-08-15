@@ -38,30 +38,31 @@ public class UseFoodProduct {
         Cost: $1.83
         Servings: 4
         Calories Per Serving: 70.0
+        Cost (100 grams): $0.366
+        Cost (1 serving): $0.4575
+        Total Calories Per Product: 280.0
 
         Product: Black Beans
         Weight (grams): 1000
         Cost: $2.5
         Servings: 10
         Calories Per Serving: 120.5
+        Cost (100 grams): $0.25
+        Cost (1 serving): $0.25
+        Total Calories Per Product: 1205.0
 
         Product: Organic Rice
         Weight (grams): 250
         Cost: $3.5
         Servings: 5
         Calories Per Serving: 10.0
+        Cost (100 grams): $1.4
+        Cost (1 serving): $0.7
+        Total Calories Per Product: 50.0
         */
 
         //..............................................................................................................
 
-        // Using Objects Fields - Dot Notation
-        // Printing values:
-
-        /*
-        System.out.println("Product: " + product1.foodType + "\n" + "Weight (grams): " + product1.weight + "\n" + "Cost: $" + product1.cost + "\n" + "Servings: " + product1.servings + "\n" + "Calories Per Serving: " + product1.caloriesPerServing + "\n");
-        System.out.println("Product: " + product2.foodType + "\n" + "Weight (grams): " + product2.weight + "\n" + "Cost: $" + product2.cost + "\n" + "Servings: " + product2.servings + "\n" + "Calories Per Serving: " + product2.caloriesPerServing + "\n");
-        System.out.println("Product: " + product3.foodType + "\n" + "Weight (grams): " + product3.weight + "\n" + "Cost: $" + product3.cost + "\n" + "Servings: " + product3.servings + "\n" + "Calories Per Serving: " + product3.caloriesPerServing + "\n");
-        */
 
 
     }

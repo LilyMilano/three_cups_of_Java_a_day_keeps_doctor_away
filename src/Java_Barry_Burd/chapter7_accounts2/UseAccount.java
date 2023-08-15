@@ -29,11 +29,29 @@ public class UseAccount {
         double yourInterestAmount = yourAccount.getInterest(yourInterestRate);
         out.print(yourInterestAmount);
         out.println(" interest ");
+        out.println();
+
+        // Making your numbers look right:
+
+        double myInterest = myAccount.getInterest(5.00);
+        double yourInterest = yourAccount.getInterest(7.00);
+
+        out.printf("$%4.2f\n", myInterest);
+        out.printf("$%5.2f\n", myInterest);
+        out.printf("$%.2f\n", myInterest);
+        out.printf("$%3.2f\n", myInterest);
+        out.printf("$%.2f $%.2f", myInterest, yourInterest);
 
         /*
         Output:
         Laura Esquivel (222 Cyberspace Lane ) has $24.02 plus $1.2009999999999998 interest
         Jandy Nelson (111 Consumer Street ) has $55.63 plus $3.8941000000000003 interest
+
+        $1.20
+        $ 1.20
+        $1.20
+        $1.20
+        $1.20 $3.89
         */
 
     }
