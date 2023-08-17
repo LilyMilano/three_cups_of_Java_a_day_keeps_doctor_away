@@ -294,6 +294,17 @@ public class chapter7_printf {
             System.out.printf("%-15s%03d %n", str[i], numbers[i]);
         }
         out.printf("================================%n");
+
+        /*Input:
+        waterfall 1
+        stars 999
+        strawberry -1
+        Output:
+        ================================
+        waterfall      001
+        stars          999
+        strawberry     000
+        ================================*/
     }
     public static String getValidString(Scanner keyboard){
         String str = keyboard.next();
