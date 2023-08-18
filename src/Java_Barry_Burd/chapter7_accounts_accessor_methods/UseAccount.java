@@ -20,7 +20,7 @@ public class UseAccount {
         yourAccount.setAddress("1390 Godfrey Street, Merida, OR 97062");
         yourAccount.setBalance(55.63);
 
-        // Displaying the output:
+        // Displaying the output with getters:
         out.print(myAccount.getName());
         out.print(" (");
         out.print(myAccount.getAddress());

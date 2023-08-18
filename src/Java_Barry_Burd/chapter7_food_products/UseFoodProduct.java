@@ -8,24 +8,24 @@ public class UseFoodProduct {
         FoodProduct product2 = new FoodProduct();
         FoodProduct product3 = new FoodProduct();
 
-        // Giving values to constructor fields of each new Object:
-        product1.foodType = "Peach Slices";
-        product1.weight = 500;
-        product1.cost = 1.83;
-        product1.servings = 4;
-        product1.caloriesPerServing = 70.0;
+        // Setting values to constructor fields of each new Object:
+        product1.setFoodType("Peach Slices");
+        product1.setWeight(500);
+        product1.setCost(1.83);
+        product1.setServings(4);
+        product1.setCaloriesPerServing(70.0);
 
-        product2.foodType = "Black Beans";
-        product2.weight = 1000;
-        product2.cost = 2.5;
-        product2.servings = 10;
-        product2.caloriesPerServing = 120.5;
+        product2.setFoodType("Black Beans");
+        product2.setWeight(1000);
+        product2.setCost(2.5);
+        product2.setServings(10);
+        product2.setCaloriesPerServing(120.5);
 
-        product3.foodType = "Organic Rice";
-        product3.weight =  250;
-        product3.cost =  3.5;
-        product3.servings = 5;
-        product3.caloriesPerServing  = 10.0;
+        product3.setFoodType("Organic Rice");
+        product3.setWeight(250);
+        product3.setCost(3.5);
+        product3.setServings(5);
+        product3.setCaloriesPerServing(10.0);
 
         // Using display() - Dot Notation
         product1.display();
@@ -62,8 +62,6 @@ public class UseFoodProduct {
         */
 
         //..............................................................................................................
-
-
 
     }
 }

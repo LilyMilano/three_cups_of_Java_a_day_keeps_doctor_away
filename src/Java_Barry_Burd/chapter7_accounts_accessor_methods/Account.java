@@ -3,7 +3,7 @@ package Java_Barry_Burd.chapter7_accounts_accessor_methods;
 public class Account {
     // Hide Those Fields:
 
-    // Declaring fields:
+    // Account class’s fields declarations:
     private String name;
     private String address;
     private double balance;

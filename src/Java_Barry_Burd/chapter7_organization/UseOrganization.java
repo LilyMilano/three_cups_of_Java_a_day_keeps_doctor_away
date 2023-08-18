@@ -1,7 +1,5 @@
 package Java_Barry_Burd.chapter7_organization;
 
-import static java.lang.System.out;
-
 public class UseOrganization {
     public static void main(String[] args) {
 
@@ -10,18 +8,18 @@ public class UseOrganization {
         Organization organization2 = new Organization();
         Organization organization3 = new Organization();
 
-        // Giving values to constructor fields of each new Object:
-        organization1.name = "Advertising Glow";
-        organization1.annualRevenue = 1000000.00;
-        organization1.profitMaking = true;
+        // Setting values to constructor fields of each new Object:
+        organization1.setName("Advertising Glow");
+        organization1.setAnnualRevenue(1000000.00);
+        organization1.setProfitMaking(true);
 
-        organization2.name = "Charity Space";
-        organization2.annualRevenue =  2000000.00;
-        organization2.profitMaking = false;
+        organization2.setName("Charity Space");
+        organization2.setAnnualRevenue(2000000.00);
+        organization2.setProfitMaking(false);
 
-        organization3.name = "Brand Solutions";
-        organization3.annualRevenue = 800000.00;
-        organization3.profitMaking = true;
+        organization3.setName("Brand Solutions");
+        organization3.setAnnualRevenue(800000.00);
+        organization3.setProfitMaking(true);
 
         // Using display() - Dot Notation
         organization1.display();
