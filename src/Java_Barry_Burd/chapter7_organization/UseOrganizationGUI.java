@@ -19,7 +19,9 @@ public class UseOrganizationGUI {
         organization1.setAnnualRevenue(annualRevenue);
         organization1.setProfitMaking(profitMaking);
 
-        return organization1.getName() + " (annual revenue: $" + organization1.getAnnualRevenue() + ") pays $" + organization1.getTaxes() + " in taxes.";
+        return organization1.getName() +
+                " (annual revenue: $" + organization1.getAnnualRevenue() +
+                ") pays $" + organization1.getTaxes() + " in taxes.";
     }
 }
 
