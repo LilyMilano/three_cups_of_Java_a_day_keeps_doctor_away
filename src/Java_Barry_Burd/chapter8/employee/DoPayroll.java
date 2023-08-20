@@ -22,4 +22,10 @@ public class DoPayroll {
         anEmployee.cutCheck(aScanner.nextDouble());
         aScanner.nextLine();
     }
+
+    /*Note:
+    diskScanner is responsible for reading the employee information from the file,
+    while aScanner is responsible for processing the information for a single employee
+    within the payOneEmployee method. They are both instances of the Scanner class,
+    but they are used in different contexts within the code.*/
 }
