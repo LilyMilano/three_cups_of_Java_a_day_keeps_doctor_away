@@ -1,6 +1,7 @@
 package Java_Barry_Burd.chapter8.employee;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -8,6 +9,9 @@ public class PayrollBufferedReader {
     public static void main(String args[]) {
         try (BufferedReader diskReader = new BufferedReader(
                 new FileReader("EmployeeInfo.txt"))) {
+
+            var employeeInfo = new File("EmployeeInfo.txt");
+            System.out.println("Looking for " + employeeInfo.getCanonicalPath());
 
             for (int empNum = 1; empNum <= 3; empNum++) {
                 payOneEmployee(diskReader);
