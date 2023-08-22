@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class PayrollBufferedReader {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         try (BufferedReader diskReader = new BufferedReader(
                 new FileReader("dataFiles\\EmployeeInfo.txt"))) {
 
