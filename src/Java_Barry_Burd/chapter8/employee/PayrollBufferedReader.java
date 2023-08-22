@@ -8,9 +8,9 @@ import java.io.IOException;
 public class PayrollBufferedReader {
     public static void main(String args[]) {
         try (BufferedReader diskReader = new BufferedReader(
-                new FileReader("EmployeeInfo.txt"))) {
+                new FileReader("dataFiles\\EmployeeInfo.txt"))) {
 
-            var employeeInfo = new File("EmployeeInfo.txt");
+            var employeeInfo = new File("dataFiles\\EmployeeInfo.txt");
             System.out.println("Looking for " + employeeInfo.getCanonicalPath());
 
             for (int empNum = 1; empNum <= 3; empNum++) {

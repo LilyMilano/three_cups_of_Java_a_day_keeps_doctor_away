@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class DoPayroll {
     public static void main(String[] args) throws IOException {
 
-        Scanner diskScanner = new Scanner(new File("EmployeeInfo.txt"));
+        Scanner diskScanner = new Scanner(new File("dataFiles\\EmployeeInfo.txt"));
 
-        var employeeInfo = new File("EmployeeInfo.txt");
+        var employeeInfo = new File("dataFiles\\EmployeeInfo.txt");
         System.out.println("Looking for " + employeeInfo.getCanonicalPath());
 
         for(int empNumber = 1; empNumber <= 3; empNumber++){
