@@ -1,4 +1,4 @@
-package Java_Barry_Burd.chapter9;
+package Java_Barry_Burd.chapter9.temperature;
 
 public class Temperature {
 

@@ -1,4 +1,7 @@
-package Java_Barry_Burd.chapter9;
+package Java_Barry_Burd.chapter9.temperature;
+
+import Java_Barry_Burd.chapter9.temperature.TempScale;
+import Java_Barry_Burd.chapter9.temperature.Temperature;
 
 import static java.lang.System.out;
 public class UseTemperature {
