@@ -6,6 +6,14 @@ public class FullTimeEmployee extends Employee{
     private double weeklySalary;
     private double benefitDeduction;
 
+    // Constructors:
+    public FullTimeEmployee() {
+        super();
+    }
+    public FullTimeEmployee(double weeklySalary){
+        this.weeklySalary = weeklySalary;
+    }
+
     // Setters and Getters:
     public void setWeeklySalary(double weeklySalaryIn) {
         this.weeklySalary = weeklySalaryIn;

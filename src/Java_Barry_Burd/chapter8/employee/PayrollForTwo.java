@@ -12,6 +12,14 @@ public class PayrollForTwo {
         ftEmployee.cutCheck(ftEmployee.findPaymentAmount());
         System.out.println();
 
+        FullTimeEmployee ftEmployee1 =  new FullTimeEmployee();
+        ftEmployee1.setName("Selena Gomez");
+        ftEmployee1.setJobTitle("Vice-President");
+        ftEmployee1.setWeeklySalary(6000.00);
+        ftEmployee1.setBenefitDeduction(600.00);
+        ftEmployee1.cutCheck(ftEmployee1.findPaymentAmount());
+        System.out.println();
+
         PartTimeEmployee ptEmployee = new PartTimeEmployee();
 
         ptEmployee.setName("Steve Martin");
@@ -21,6 +29,8 @@ public class PayrollForTwo {
 
         /*Output:
         Pay to the order of Martin Short (CEO) ***$4,500.00
+
+        Pay to the order of Selena Gomez (Vice-President) ***$5,400.00
 
         Pay to the order of Steve Martin (Driver) ***$75.30*/
     }
