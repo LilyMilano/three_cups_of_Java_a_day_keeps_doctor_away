@@ -1,6 +1,6 @@
 package Java_Barry_Burd;
 
-public class Chapters123 {
+public class Chapters_1_2_3 {
     public static void main(String[] args) {
 
         //Pay Barry
