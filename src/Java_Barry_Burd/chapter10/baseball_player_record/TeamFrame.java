@@ -29,7 +29,7 @@ public class TeamFrame extends JFrame {
         }
 
     void addPlayerInfo(Player player){
-        add(new JLabel(player.name()));
+        add(new JLabel("     " + player.name()));
         add(new JLabel(player.getAverageString()));
     }
 }
