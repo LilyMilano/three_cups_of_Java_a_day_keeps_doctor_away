@@ -3,6 +3,7 @@ package Java_Barry_Burd.chapter10.playing_cards;
 public class PlayingCard {
     private int number;
     private Suit suit;
+    public static int cardsCounter = 0;
 
     // Constructor:
     public PlayingCard(int number, Suit suit) {
@@ -19,6 +20,7 @@ public class PlayingCard {
                 default -> Integer.toString(number);
             };
             return numberString + " of " + suit;
+
         } else return "Not defined";
     }
     // Getters and Setters:

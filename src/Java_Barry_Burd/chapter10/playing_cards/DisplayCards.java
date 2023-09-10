@@ -1,5 +1,7 @@
 package Java_Barry_Burd.chapter10.playing_cards;
 
+import static Java_Barry_Burd.chapter10.playing_cards.PlayingCard.cardsCounter;
+
 public class DisplayCards {
     public static void main(String[] args) {
 
@@ -16,15 +18,16 @@ public class DisplayCards {
 
         // Print the cards:
         for(int i = 0; i < cards.length; i++) {
-            System.out.println(cards[i].getString());
+            cardsCounter++;
+            System.out.println(cardsCounter + " " + cards[i].getString());
         }
     }
 }
 
 /*Output:
-        Ace of DIAMONDS
-        3 of CLUBS
-        6 of HEARTS
-        Jack of SPADES
-        Queen of DIAMONDS
-        King of HEARTS*/
+1 Ace of DIAMONDS
+2 3 of CLUBS
+3 6 of HEARTS
+4 Jack of SPADES
+5 Queen of DIAMONDS
+6 King of HEARTS*/
