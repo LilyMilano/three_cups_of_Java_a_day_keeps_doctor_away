@@ -41,27 +41,37 @@ public class ShowGuests {
             }
         }
 
+        out.println();
         /* Note: Use two for loop because enhanced for loop doesn't update maxGuests again because it already found a max earlier.
         So it only prints out the first max it encounters, even if there are duplicates later.
         The regular for loop indexes each element directly, so it can check each one for a new max value.
         The enhanced for loop just iterates sequentially without indexing, so it misses later duplicates.*/
 
+        // Find the total.............................................
+        int runningTotal = 0;
+
+        for(int guest : guests){
+            runningTotal += guest;
+        }
+            out.printf("Total number of guests: %d%n", runningTotal);
     }
 }
 
-        /*Output:
-        Room	Guests
-        0		1
-        1		4
-        2		2
-        3		0
-        4		2
-        5		1
-        6		4
-        7		3
-        8		0
-        9		2
+/*Output:
+Room	Guests
+0		1
+1		4
+2		2
+3		0
+4		2
+5		1
+6		4
+7		3
+8		0
+9		2
 
-        4 guests in Room 1
-        4 guests in Room 6
-        */
+4 guests in Room 1
+4 guests in Room 6
+
+Total number of guests: 19
+*/
