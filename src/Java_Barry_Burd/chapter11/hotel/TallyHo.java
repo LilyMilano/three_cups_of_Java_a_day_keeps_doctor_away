@@ -38,8 +38,8 @@ public class TallyHo {
 
         // Print report
         System.out.println("Guests\tRoom Count");
-        for(int i = 0; i <= maxGuests; i++){
-            System.out.println(i + "\t\t" + howManyRoomsWith[i]);
+        for(int guestCount = 0; guestCount <= maxGuests; guestCount++){
+            System.out.println(guestCount + "\t\t" + howManyRoomsWith[guestCount]);
         }
 
         // Output:
