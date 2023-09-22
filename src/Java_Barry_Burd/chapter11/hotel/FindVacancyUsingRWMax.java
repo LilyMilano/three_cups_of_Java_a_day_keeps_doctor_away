@@ -15,7 +15,7 @@ public class FindVacancyUsingRWMax {
         reads room information from the "RoomList.txt" file using a Scanner, and assigns the values to the corresponding
         RoomWithMax objects. This is important for initializing the room data for further processing.*/
 
-        Scanner diskScanner = new Scanner(new File("RoomList.txt"));
+        Scanner diskScanner = new Scanner(new File("RoomList1.txt"));
         for(roomNum = 0; roomNum < 10; roomNum++){
             room[roomNum] = new RoomWithMax();
             room[roomNum].readRoom(diskScanner);
@@ -50,7 +50,7 @@ public class FindVacancyUsingRWMax {
             out.println("You're in room " + roomNum);
             room[roomNum].setGuests(howMany);
 
-            PrintStream listOut = new PrintStream("RoomList.txt");
+            PrintStream listOut = new PrintStream("RoomList1.txt");
             for(roomNum = 0; roomNum < 10; roomNum++){
                 room[roomNum].writeRoom(listOut);
             }
