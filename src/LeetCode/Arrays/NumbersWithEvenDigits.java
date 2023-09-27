@@ -19,6 +19,9 @@ public class NumbersWithEvenDigits {
     public static void main(String[] args){
         int[] nums = {12, 345, 2, 6, 7896};
         int evenDigitsCount = findNumbers(nums);
-        System.out.println(evenDigitsCount);
+        System.out.println("Number of elements with even digits: " + evenDigitsCount);
     }
+
+    /*Output:
+    Number of elements with even digits: 2*/
 }
