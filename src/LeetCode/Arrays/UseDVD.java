@@ -120,7 +120,97 @@ public class UseDVD {
         }
         System.out.println("Maximum number of consecutive 1s: " + maxConsecutiveOnes);
         // Output: Maximum number of consecutive 1s: 3
+        System.out.println();
+        //...................................................................
+
+        // Array Insertions:
+        // 1. Inserting at the End of an Array:
+
+        // Declare an integer array of six elements:
+        int[] elements = new int[6];
+        length = 0;
+
+        // Add three elements into the array:
+        for (int i = 0; i < 3; i++) {
+            elements[length] = i;
+            length++;
+        }
+
+        // Insert a new element at the end of the Array. Again,
+        // it's important to ensure that there is enough space
+        // in the array for inserting a new element.
+        elements[length] = 10;
+        length++;
+
+        // Let's visualise what's happening:
+        printElements(elements);
+        System.out.println();
+
+        /* Output:
+        Index 0 contains 0
+        Index 1 contains 1
+        Index 2 contains 2
+        Index 3 contains 10
+        Index 4 contains 0
+        Index 5 contains 0 */
+
+        // 2. Inserting at the Start of an Array:............................
+
+        // First, we will have to create space for a new element.
+        // We do that by shifting each element one index to the right.
+        // This will firstly move the element at index 3, then 2, then 1, then finally 0.
+        // We need to go backwards to avoid overwriting any elements.
+
+        for (int i = 3; i >= 0; i--) {
+            elements[i + 1] = elements[i];
+        }
+
+        // Now that we have created space for the new element,
+        // we can insert it at the beginning.
+        elements[0] = 20;
+        printElements(elements);
+        System.out.println();
+
+        /*Output:
+        Index 0 contains 20
+        Index 1 contains 0
+        Index 2 contains 1
+        Index 3 contains 2
+        Index 4 contains 10
+        Index 5 contains 0*/
+
+        // 3. Inserting Anywhere in the Array...................................
+        // Say we want to insert the element at index 2.
+        // First, we will have to create space for the new element.
+        for (int i = 4; i >= 2; i--)
+        {
+            // Shift each element one position to the right.
+            elements[i + 1] = elements[i];
+        }
+
+// Now that we have created space for the new element,
+// we can insert it at the required index.
+        elements[2] = 30;
+        printElements(elements);
+        System.out.println();
+
+        /* Output:
+        Index 0 contains 20
+        Index 1 contains 0
+        Index 2 contains 30
+        Index 3 contains 1
+        Index 4 contains 2
+        Index 5 contains 10 */
+    }
+
+    public static void printElements(int[] elements) {
+        for (int i = 0; i < elements.length; i++) {
+            System.out.println("Index " + i + " contains " + elements[i]);
+        }
     }
 }
+
+
+
 
 
