@@ -15,6 +15,9 @@ public class Main {
             103
             13*/
         }
+        out.println();
+        double i = 5.0, j = 7.0;
+        out.println(Double.sum(i, j));
     }
 
     public static void fillTheList(ArrayList<Integer> list) {
