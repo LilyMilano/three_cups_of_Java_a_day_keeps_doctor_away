@@ -11,7 +11,7 @@ public class GetData {
         try(Connection conn = DriverManager.getConnection(CONNECTION);
             Statement statement = conn.createStatement();
             ResultSet resultset = statement.executeQuery
-                    ("select * from " + "ACCOUNTS")) {
+                    ("select * from " + "ACCOUNTS where BALANCE > 30")) {
 
             while (resultset.next()) {
                 out.print(resultset.getString("NAME"));
